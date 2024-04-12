@@ -12,12 +12,10 @@ sign for a free account and log in and then you navigate to the api keys section
 
 ### CONST API_KEY="YOUR_API_KEY"
 
-##### creating a weather API PROJECT
+##### creating a weather APP PROJECT
 
-#### git
+####  git@github.com:dickson4954/weather-app-project.git
 
-
-#### 
 
 #### [git]{gh-pages link}
 
