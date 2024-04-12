@@ -1,0 +1,75 @@
+@import url(./bootstrap.css);
+ 
+
+
+body{
+background: #e3f2fd;
+background: #6c757d;
+background: aqua;
+}
+h1{
+    background: blue;
+    font-size: 1.25rem;
+    color: white;
+    padding: 18px 0;
+    text-align: center;
+
+}
+.container{
+    display: flex;
+    padding: 30px;
+    gap: 35px;
+}
+.Weather-input{
+    width: 550px;
+    
+}
+.Weather-input input{
+width: 100px;
+height: 46px;
+}
+
+
+.Weather-input button{
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+    
+    color: white;
+    border-radius: 4px;
+    background: blue;
+}
+.Weather-data{
+    width: 100%;
+}
+.Current-weather{
+    background:blue;
+    color: #fff;
+    padding: 20px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.Current-weather h2{
+    font-size: 1.7rem;
+
+}
+.Weather-data h4{
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.days-forecast{
+    font-size: 1.5rem;
+    margin: 20px;
+
+}
+.weather-cards{
+display: flex;
+gap: 20px;
+}
+.weather-cards .card{
+    background: #6c757d;
+    padding: 18px;
+    border-radius: 5px;
+}
