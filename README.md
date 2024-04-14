@@ -14,7 +14,7 @@ sign for a free account and log in and then you navigate to the api keys section
 
 ##### creating a weather API PROJECT
 
-#### git
+#### git git@github.com:dickson4954/weather-app-project.git
 
 
 #### 

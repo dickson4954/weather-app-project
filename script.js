@@ -1,6 +1,7 @@
 
 const API_KEY="5f0114f38850310d50fce18127c91b5e";//api key for open weather Api
 const cityInput=document.querySelector(".city-input");
+const locationButton=document.querySelector(".location-btn")
 const searchButton=document.querySelector(".search-btn")
 const weathercardsDiv=document.querySelector(".Current-weather")
 const currentweatherDiv=document.querySelector(".weather-cards")
@@ -79,6 +80,28 @@ const getcitycoordinates=()=>{
         alert("An error occured while fetching the coordinates")
     })
 }
+const getusercoordinates=()=>{
+    navigator.geolocation.getCurrentPosition(
+        position=>{
+            const {latitude,longitude}=position.coords;//get coordinates of user location
+            const REVERSE_GEOCODING_URL=`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`
+           //get city name from coordinates using reverse geocoding API
+            fetch(REVERSE_GEOCODING_URL).then(res=>res.json()).then(data=>{
+                const {name}=data[0]
+                getWeatherDetails(name,latitude,longitude);
+            }).catch(()=>{
+                alert("An error occured while fetching the city!")
+            });
+        },
+        error=>{//show alert if user denied location permission
+            if (error.code===error.PERMISSION_DENIED){
+                alert("Geolocation request denied.please reset location permission to grant access again.")
+
+            }
+        }
+    )
+}
 
 searchButton.addEventListener("click",getcitycoordinates);
-
+locationButton.addEventListener("click",getusercoordinates);
+cityInput.addEventListener("keyup", e=> e.key === "Enter" && getcitycoordinates())
